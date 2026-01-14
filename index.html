@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Focus Flow Pro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="hero-image"></div>
+            <h1>Focus Flow</h1>
+            <p class="tagline">集中力をデザインする</p>
+        </header>
+
+        <div id="statusBar" class="status-bar"></div>
+        <div id="aiMessage"></div>
+
+        <section class="input-card">
+            <div class="input-group">
+                <input type="text" id="taskName" placeholder="次に何を達成しますか？">
+            </div>
+            <div class="row">
+                <div class="col"><label>重要度</label><input type="number" id="imp" value="5" min="1" max="10"></div>
+                <div class="col"><label>緊急度</label><input type="number" id="urg" value="5" min="1" max="10"></div>
+            </div>
+            <div class="row">
+                <div class="col"><label>期限日</label><input type="date" id="deadline"></div>
+                <div class="col"><label>通知</label><input type="time" id="reminderTime"></div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>カテゴリ</label>
+                    <select id="taskCategory">
+                        <option value="work">ビジネス / 仕事</option>
+                        <option value="personal">プライベート / 個人</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+            </div>
+            <button class="add-btn" id="addBtn">タスクを最適化して追加</button>
+        </section>
+
+        <div class="stats-container">
+            <h3><i class="fas fa-chart-line"></i> パフォーマンス分析</h3>
+            <canvas id="weeklyChart"></canvas>
+        </div>
+
+        <div class="list-header">
+            <h2>現在のタスク</h2>
+            <div class="controls">
+                <span>完了済を隠す</span>
+                <label class="switch">
+                    <input type="checkbox" id="hideSwitch">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div id="taskList"></div>
+
+        <div class="completed-section" id="completedSection" style="display: none;">
+            <h2><i class="fas fa-archive"></i> 完了アーカイブ</h2>
+            <div id="completedList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
