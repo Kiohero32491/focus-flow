@@ -27,6 +27,3 @@
 ### 3. GitHub PagesによるWeb公開
 実務での運用を想定し、GitHub Pagesを用いてWeb上へのデプロイ（公開）を行いました。
 PC・スマートフォンの両方ですぐに動作確認ができる環境を整えています。
-
----
-*Created by Taisei Kuromatsu*
